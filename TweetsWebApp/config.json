@@ -1,0 +1,10 @@
+{
+  "consumer_key" : "cL8kHfAA5781KKt3fSNDKnEsX",
+  "consumer_secret" : "bAClKiEQh3aBAMxtfylw3nX4IV6y22w5NMTeTZDf3xaUyFBCms",
+  "access_token" : "38226512-DwZd2rLgyaZL08hbGFugOuSQpDeMm4a2THF6WRo23",
+  "access_token_secret" : "v3tTHwl0nak39bBkKDjcNVCEDQUKyqExpTkO5H7HrWbyg",
+  "api" : "cadfded4e73040fea736c43b185cf292",
+  "tweets_to_download": 10,
+  "language" : "en",
+  "result_type" : "recent"
+}

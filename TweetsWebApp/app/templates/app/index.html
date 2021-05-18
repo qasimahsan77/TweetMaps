@@ -1,0 +1,45 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+<style>
+form {
+    margin-left: 10%;
+    margin-right:10%;
+    margin-top:5%;
+    width: 100%;
+}
+</style>
+<form class="form-inline" method="post" >
+    {% csrf_token %}
+    <div class="form-group">
+        <input type="text" name="query" class="form-control" required placeholder="Query one">
+    </div>
+    <div class="form-group">
+        <input type="text" name="queryone" class="form-control" required placeholder="Query Two">
+    </div>
+    <div class="form-group">
+        <input type="text" name="querytwo" class="form-control" required placeholder="Query Three">
+    </div>
+    <div class="form-group">
+        <select class="form-select btn-default form-control" aria-label="Default select example" name="country">
+            <option selected>Select Country</option>
+            {%for c in countrylist%}
+                <option value="{{c}}">{{c}}</option>
+            {%endfor%}
+        </select>
+    </div>
+    <button type="submit" class="btn btn-info">Search</button>
+</form>
+{%if TweetsData %}
+{% load staticfiles %}
+<iframe src="{% static 'app/content/maps.html' %}" height="600" style="margin-top:1em;width:100%;"></iframe>
+{%endif%}
+<script>
+    $(document).ready(function () {
+        $('#example').DataTable();
+    });
+    //$(document).ready(function() {
+    //    $("#includedContent").load("http://localhost:56081/map.html");
+    //});
+</script>
+{% endblock %}
